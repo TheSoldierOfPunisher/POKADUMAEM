@@ -13,7 +13,7 @@
 ## Выбранный датасет
 UEFA Champions League Dataset : AllTimeRankingByCountry
 
-'''csv
+```csv
 Country,Participated,Titles,Played,Win,Draw,Loss,Goals For,Goals Against,Pts,Goal Diff
 1,Spain,148,19,1349,705,306,338,2427,1446,1716,981
 2,England,136,14,1239,655,271,313,2218,1266,1581,952
