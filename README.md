@@ -16,15 +16,25 @@
 # Считывание данных о футбольной статистике по странам
 country_stats_data = read_country_stats('AllTimeRankingByCountry.csv')
 
-# Определение общего количества матчей, сыгранных страной
+# Получение объекта страны
 country = country_stats_data.find_country('Spain')
+
+# Общее количество сыгранных матчей
 games_played = country.played
+
+# Общее количество забитых голов
+goals_for = country.goals_for
 
 # Определение количества побед
 wins = country.wins
 
 # Определение среднего количества голов за матч
 average_goals_per_game = country.average_goals_per_game
+
+# Определение зависимости между числом матчей и средней результативностью
+# (чем больше матчей, тем выше/ниже средняя результативность?)
+# Здесь просто значение, но позже можно сравнить по всем странам.
+match_goal_dependency = country.goals_for.to_f / country.played
 
 # Определение разницы голов
 goal_difference = country.goal_diff
