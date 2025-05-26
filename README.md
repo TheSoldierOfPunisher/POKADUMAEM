@@ -10,6 +10,41 @@
 - Расчёта продвинутых метрик эффективности
 - Визуализации результатов анализа
 
+## Взаимодействие пользователя с программой
+```ruby
+# Считывание данных о футбольной статистике по странам
+country_stats_data = read_country_stats('AllTimeRankingByCountry.csv')
+
+# Определение общего количества матчей, сыгранных страной
+country = country_stats_data.find_country('Spain')
+games_played = country.played
+
+# Определение количества побед
+wins = country.wins
+
+# Определение среднего количества голов за матч
+average_goals_per_game = country.average_goals_per_game
+
+# Определение разницы голов
+goal_difference = country.goal_diff
+
+# Определение индекса эффективности (учитывая победы и ничьи)
+efficiency = country.efficiency_index
+
+# Определение страны с наибольшим количеством титулов
+top_by_titles = country_stats_data.top_by_titles
+top_country_name = top_by_titles.name
+top_country_titles = top_by_titles.titles
+
+# Определение страны с наибольшим win-rate
+most_winning_country = country_stats_data.top_by_win_rate
+winning_rate = most_winning_country.win_rate
+
+# Определение самой эффективной команды (по индексу эффективности)
+most_efficient_country = country_stats_data.most_efficient
+efficient_country_index = most_efficient_country.efficiency_index
+```
+
 ## Выбранный датасет
 UEFA Champions League Dataset : AllTimeRankingByCountry
 
@@ -69,3 +104,4 @@ Country,Participated,Titles,Played,Win,Draw,Loss,Goals For,Goals Against,Pts,Goa
 52,Gibraltar,8,0,20,6,3,11,23,35,15,-12
 53,Andorra,15,0,31,3,6,22,19,68,12,-49
 54,San Marino,15,0,26,1,3,22,9,66,5,-57
+```
