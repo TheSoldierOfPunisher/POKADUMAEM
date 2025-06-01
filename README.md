@@ -31,9 +31,11 @@ wins = country.wins
 # Определение среднего количества голов за матч
 average_goals_per_game = country.average_goals_per_game
 
-# Определение зависимости между числом матчей и средней результативностью
-# (чем больше матчей, тем выше/ниже средняя результативность?)
-match_goal_dependency = country.goals_for.to_f / country.played
+# Связь между количеством титулов и win-rate
+# Успешные команды должны иметь высокий win-rate
+titles = country.titles
+win_rate = country.win_rate
+title_winrate_ratio = titles.to_f / win_rate if win_rate > 0 else 0
 
 # Определение разницы голов
 goal_difference = country.goal_diff
